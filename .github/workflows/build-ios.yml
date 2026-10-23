@@ -3,20 +3,62 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   build-ios:
     runs-on: macos-14
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build with Geode SDK
-        uses: geode-sdk/build-geode-mod@main
-        id: build
-        with:
-          target: ios
-          build-config: Release
+      - name: Clone Geode SDK
+        run: |
+          git clone --depth 1 https://github.com/geode-sdk/geode.git ~/geode-sdk
+          echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
+
+      - name: Install Geode CLI
+        run: |
+          brew install geode-sdk/geode/geode-cli || true
+          geode --version || echo "CLI not available, continuing"
+
+      - name: Download iOS binaries
+        run: |
+          SDK_VER=$(cat ~/geode-sdk/VERSION)
+          echo "SDK version: $SDK_VER"
+          mkdir -p ~/geode-sdk/bin/ios
+          curl -fL \
+            "https://github.com/geode-sdk/geode/releases/download/v${SDK_VER}/geode-ios.zip" \
+            -o /tmp/geode-ios.zip || \
+          curl -fL \
+            "https://github.com/geode-sdk/geode/releases/latest/download/geode-ios.zip" \
+            -o /tmp/geode-ios.zip
+          unzip /tmp/geode-ios.zip -d ~/geode-sdk/bin/ios/ || true
+          ls ~/geode-sdk/bin/ios/
+
+      - name: Configure CMake
+        run: |
+          cmake -B build-ios \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_SYSTEM_NAME=iOS \
+            -DCMAKE_OSX_ARCHITECTURES=arm64 \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 \
+            -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON
+
+      - name: Build
+        run: cmake --build build-ios --config Release -j$(sysctl -n hw.logicalcpu)
+
+      - name: Collect output
+        run: |
+          DYLIB=$(find build-ios -name "*.dylib" | grep -v _deps | head -1)
+          echo "Built: $DYLIB"
+          file "$DYLIB"
+          cp "$DYLIB" ai.predictivebuffer.ios.dylib
 
       - uses: actions/upload-artifact@v4
         with:
           name: ai.predictivebuffer-ios
-          path: ${{ steps.build.outputs.build-output }}
+          path: ai.predictivebuffer.ios.dylib
