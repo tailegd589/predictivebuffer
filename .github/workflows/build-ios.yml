@@ -13,16 +13,10 @@ jobs:
         uses: geode-sdk/build-geode-mod@main
         id: build
         with:
-          platform: ios
+          target: ios
           build-config: Release
-
-      - name: Rename dylib
-        run: |
-          find . -name "*.dylib" | grep -v _deps | head -1
-          DYLIB=$(find ${{ steps.build.outputs.build-output }} -name "*.dylib" | head -1)
-          cp "$DYLIB" ai.predictivebuffer.ios.dylib
 
       - uses: actions/upload-artifact@v4
         with:
           name: ai.predictivebuffer-ios
-          path: ai.predictivebuffer.ios.dylib
+          path: ${{ steps.build.outputs.build-output }}
