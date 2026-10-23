@@ -1,0 +1,14 @@
+# Target labels
+ arc-populate
+# Source files and their labels
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/CMakeFiles/arc-populate
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/CMakeFiles/arc-populate.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/CMakeFiles/arc-populate-complete.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-build.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-configure.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-download.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-install.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-mkdir.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-patch.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-test.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-update.rule

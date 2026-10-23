@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/CMakeFiles/tuliphook-populate"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/CMakeFiles/tuliphook-populate.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/CMakeFiles/tuliphook-populate-complete.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-build.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-configure.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-download.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-install.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-mkdir.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-patch.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-test.rule"
+		},
+		{
+			"file" : "/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"tuliphook-populate"
+		],
+		"name" : "tuliphook-populate"
+	}
+}

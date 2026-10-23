@@ -1,0 +1,21 @@
+# ninja log v7
+2	148	1792793269112987252	result-populate-prefix/src/result-populate-stamp/result-populate-mkdir	cbf824cfcb695e46
+2	148	1792793269112987252	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-mkdir	cbf824cfcb695e46
+149	2227	1792793271192987251	result-populate-prefix/src/result-populate-stamp/result-populate-download	1ce6709a98aad4f6
+149	2227	1792793271192987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-download	1ce6709a98aad4f6
+2228	2401	1792793271202987251	result-populate-prefix/src/result-populate-stamp/result-populate-update	dea2778a04713c76
+2228	2401	1792793271202987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-update	dea2778a04713c76
+2401	2539	1792793271502987251	result-populate-prefix/src/result-populate-stamp/result-populate-patch	91c294845c11c819
+2401	2539	1792793271502987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-patch	91c294845c11c819
+2539	2689	1792793271652987251	result-populate-prefix/src/result-populate-stamp/result-populate-configure	dec0836a9376603
+2539	2689	1792793271652987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-configure	dec0836a9376603
+2690	2833	1792793271802987251	result-populate-prefix/src/result-populate-stamp/result-populate-build	4d6d8f11e6524332
+2690	2833	1792793271802987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-build	4d6d8f11e6524332
+2833	2967	1792793271932987251	result-populate-prefix/src/result-populate-stamp/result-populate-install	a221a9d0269cb1f3
+2833	2967	1792793271932987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-install	a221a9d0269cb1f3
+2968	3091	1792793272052987251	result-populate-prefix/src/result-populate-stamp/result-populate-test	48d3bc6bfea54930
+2968	3091	1792793272052987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-test	48d3bc6bfea54930
+3092	3271	1792793272232987251	CMakeFiles/result-populate-complete	1daa3563b0b4f82d
+3092	3271	1792793272232987251	result-populate-prefix/src/result-populate-stamp/result-populate-done	1daa3563b0b4f82d
+3092	3271	1792793272232987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/CMakeFiles/result-populate-complete	1daa3563b0b4f82d
+3092	3271	1792793272232987251	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/result-populate-prefix/src/result-populate-stamp/result-populate-done	1daa3563b0b4f82d

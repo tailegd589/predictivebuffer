@@ -1,0 +1,3 @@
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/CMakeFiles/pegtl-populate.dir
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/CMakeFiles/rebuild_cache.dir

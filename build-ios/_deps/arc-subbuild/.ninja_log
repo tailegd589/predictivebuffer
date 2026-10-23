@@ -1,0 +1,21 @@
+# ninja log v7
+2	138	1792793216402987272	arc-populate-prefix/src/arc-populate-stamp/arc-populate-mkdir	cffb47ae56c6d64e
+2	138	1792793216402987272	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-mkdir	cffb47ae56c6d64e
+139	2464	1792793218732987271	arc-populate-prefix/src/arc-populate-stamp/arc-populate-download	9d710ce4995e1917
+139	2464	1792793218732987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-download	9d710ce4995e1917
+2464	2610	1792793218742987271	arc-populate-prefix/src/arc-populate-stamp/arc-populate-update	d41ca4aae335ec1
+2464	2610	1792793218742987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-update	d41ca4aae335ec1
+2611	2741	1792793219012987271	arc-populate-prefix/src/arc-populate-stamp/arc-populate-patch	7dc9f48def9350f0
+2611	2741	1792793219012987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-patch	7dc9f48def9350f0
+2741	2863	1792793219132987271	arc-populate-prefix/src/arc-populate-stamp/arc-populate-configure	bcc23e4c1722909e
+2741	2863	1792793219132987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-configure	bcc23e4c1722909e
+2864	3009	1792793219272987271	arc-populate-prefix/src/arc-populate-stamp/arc-populate-build	24f86808f3d1ee99
+2864	3009	1792793219272987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-build	24f86808f3d1ee99
+3009	3141	1792793219402987271	arc-populate-prefix/src/arc-populate-stamp/arc-populate-install	69d491ec91562f56
+3009	3141	1792793219402987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-install	69d491ec91562f56
+3141	3273	1792793219542987271	arc-populate-prefix/src/arc-populate-stamp/arc-populate-test	40fee6eb6be1aa30
+3141	3273	1792793219542987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-test	40fee6eb6be1aa30
+3273	3447	1792793219712987271	CMakeFiles/arc-populate-complete	3fec0f88d766d3cf
+3273	3447	1792793219712987271	arc-populate-prefix/src/arc-populate-stamp/arc-populate-done	3fec0f88d766d3cf
+3273	3447	1792793219712987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/CMakeFiles/arc-populate-complete	3fec0f88d766d3cf
+3273	3447	1792793219712987271	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/arc-subbuild/arc-populate-prefix/src/arc-populate-stamp/arc-populate-done	3fec0f88d766d3cf

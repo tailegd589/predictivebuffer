@@ -1,0 +1,3 @@
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/broma-subbuild/CMakeFiles/broma-populate.dir
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/broma-subbuild/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/broma-subbuild/CMakeFiles/rebuild_cache.dir

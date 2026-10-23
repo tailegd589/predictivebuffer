@@ -1,0 +1,21 @@
+# ninja log v7
+1	118	1792793240122987263	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-mkdir	2d634553642aff07
+1	118	1792793240122987263	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-mkdir	2d634553642aff07
+118	7140	1792793247142987260	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-download	8d8f75a2467236a0
+118	7140	1792793247142987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-download	8d8f75a2467236a0
+7141	7304	1792793247152987260	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-update	1b857f366cd9535a
+7141	7304	1792793247152987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-update	1b857f366cd9535a
+7304	7435	1792793247432987260	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-patch	d543b92717c72c2
+7304	7435	1792793247432987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-patch	d543b92717c72c2
+7435	7564	1792793247562987260	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-configure	c995225c6b8af6a4
+7435	7564	1792793247562987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-configure	c995225c6b8af6a4
+7564	7690	1792793247692987260	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-build	ca194b3e0f56debf
+7564	7690	1792793247692987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-build	ca194b3e0f56debf
+7690	7822	1792793247822987260	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-install	9b685eee63524cc3
+7690	7822	1792793247822987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-install	9b685eee63524cc3
+7822	7959	1792793247962987260	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-test	b8f7aa691a7a8636
+7822	7959	1792793247962987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-test	b8f7aa691a7a8636
+7959	8146	1792793248142987260	CMakeFiles/fmt-populate-complete	a7ab781df5eb92b5
+7959	8146	1792793248142987260	fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-done	a7ab781df5eb92b5
+7959	8146	1792793248142987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/CMakeFiles/fmt-populate-complete	a7ab781df5eb92b5
+7959	8146	1792793248142987260	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/fmt-populate-done	a7ab781df5eb92b5

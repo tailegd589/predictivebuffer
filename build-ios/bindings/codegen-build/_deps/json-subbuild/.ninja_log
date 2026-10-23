@@ -1,0 +1,21 @@
+# ninja log v7
+2	137	1792793272872987250	json-populate-prefix/src/json-populate-stamp/json-populate-mkdir	bd5ce90251f19537
+2	137	1792793272872987250	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-mkdir	bd5ce90251f19537
+138	2915	1792793275642987249	json-populate-prefix/src/json-populate-stamp/json-populate-download	40607a041bee1864
+138	2915	1792793275642987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-download	40607a041bee1864
+2915	3063	1792793275652987249	json-populate-prefix/src/json-populate-stamp/json-populate-update	5f04e3865de1aa7b
+2915	3063	1792793275652987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-update	5f04e3865de1aa7b
+3063	3201	1792793275932987249	json-populate-prefix/src/json-populate-stamp/json-populate-patch	ef6895054454fb0a
+3063	3201	1792793275932987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-patch	ef6895054454fb0a
+3201	3327	1792793276062987249	json-populate-prefix/src/json-populate-stamp/json-populate-configure	a96aa0e134114528
+3201	3327	1792793276062987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-configure	a96aa0e134114528
+3327	3450	1792793276182987249	json-populate-prefix/src/json-populate-stamp/json-populate-build	544e027c170aad5a
+3327	3450	1792793276182987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-build	544e027c170aad5a
+3450	3576	1792793276312987249	json-populate-prefix/src/json-populate-stamp/json-populate-install	66a7fde044d9d4c0
+3450	3576	1792793276312987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-install	66a7fde044d9d4c0
+3577	3706	1792793276442987249	json-populate-prefix/src/json-populate-stamp/json-populate-test	c641d8d8903fbdd9
+3577	3706	1792793276442987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-test	c641d8d8903fbdd9
+3706	3891	1792793276622987249	CMakeFiles/json-populate-complete	d4fbaf2141c15728
+3706	3891	1792793276622987249	json-populate-prefix/src/json-populate-stamp/json-populate-done	d4fbaf2141c15728
+3706	3891	1792793276622987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/CMakeFiles/json-populate-complete	d4fbaf2141c15728
+3706	3891	1792793276622987249	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-done	d4fbaf2141c15728

@@ -1,0 +1,23 @@
+# ninja log v7
+12	1833	1792793276942987249	_deps/json-build/CMakeFiles/mat-json.dir/src/external/dragonbox.cpp.o	c7b76df7564a0568
+10	6322	1792793276942987249	_deps/fmt-build/CMakeFiles/fmt.dir/src/os.cc.o	770dd1ac4e46ed7f
+38	11947	1792793276972987249	_deps/json-build/CMakeFiles/mat-json.dir/src/impl.cpp.o	ba480683b65d7a0f
+1836	13437	1792793278772987248	_deps/json-build/CMakeFiles/mat-json.dir/src/dump.cpp.o	ba90ae672bbf1f39
+25	18589	1792793276962987249	_deps/json-build/CMakeFiles/mat-json.dir/src/value.cpp.o	4e8d6d13eb16dfe9
+8	18747	1792793276942987249	CMakeFiles/Codegen.dir/cmake_pch.hxx.pch	e9c1afc5f7b035de
+18756	20775	1792793295692987242	CMakeFiles/Codegen.dir/src/WindowsSymbol.cpp.o	b2a0182b8a9b23b8
+57	21591	1792793276992987249	_deps/json-build/CMakeFiles/mat-json.dir/src/parser.cpp.o	ee7600633d8c43a3
+18755	24619	1792793295682987242	CMakeFiles/Codegen.dir/src/AndroidSymbol.cpp.o	d9f37f4d656f505f
+18760	26670	1792793295692987242	CMakeFiles/Codegen.dir/src/InlineGen.cpp.o	c15286115d4b640c
+20778	26970	1792793297712987241	CMakeFiles/Codegen.dir/src/JsonInterfaceGen.cpp.o	2652b836661486e0
+24621	27026	1792793301552987239	CMakeFiles/Codegen.dir/src/PredeclareGen.cpp.o	bfe8a08070cdd082
+10	27233	1792793276942987249	_deps/fmt-build/CMakeFiles/fmt.dir/src/format.cc.o	3a0fa3febef8c0e8
+26973	27492	1792793303912987238	_deps/json-build/libmat-json.a	4535109d4b7c6fa4
+27234	27679	1792793304162987238	_deps/fmt-build/libfmt.a	dc1e6b921c07e191
+18748	32199	1792793295682987242	CMakeFiles/Codegen.dir/src/Main.cpp.o	3b5f87238d7a46cd
+18757	32442	1792793295692987242	CMakeFiles/Codegen.dir/src/BindingGen.cpp.o	dd923cb6f0a66cba
+21593	32495	1792793298522987241	CMakeFiles/Codegen.dir/src/ModifyGen.cpp.o	4a558e8ce0133dc6
+26673	34927	1792793303602987239	CMakeFiles/Codegen.dir/src/SourceGen.cpp.o	e49a5262a82ddc5b
+11	50709	1792793276942987249	_deps/broma-build/CMakeFiles/Broma.dir/src/broma.cpp.o	7abfd4991cf1fc55
+50714	51069	1792793327642987229	_deps/broma-build/libBroma.a	8e77fafacc584d47
+51070	51668	1792793328002987229	Codegen	d4688e5287cdbb37

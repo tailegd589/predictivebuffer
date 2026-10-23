@@ -1,0 +1,14 @@
+# Target labels
+ tuliphook-populate
+# Source files and their labels
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/CMakeFiles/tuliphook-populate
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/CMakeFiles/tuliphook-populate.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/CMakeFiles/tuliphook-populate-complete.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-build.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-configure.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-download.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-install.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-mkdir.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-patch.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-test.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-update.rule

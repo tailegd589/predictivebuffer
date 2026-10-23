@@ -1,0 +1,14 @@
+# Target labels
+ json-populate
+# Source files and their labels
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/CMakeFiles/json-populate
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/CMakeFiles/json-populate.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/CMakeFiles/json-populate-complete.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-build.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-configure.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-download.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-install.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-mkdir.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-patch.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-test.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-update.rule

@@ -1,0 +1,21 @@
+# ninja log v7
+2	134	1792793189332987282	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-mkdir	fc42e02f06888659
+2	134	1792793189332987282	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-mkdir	fc42e02f06888659
+134	2332	1792793191532987281	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-download	7e45a2840b9ca828
+134	2332	1792793191532987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-download	7e45a2840b9ca828
+2332	2489	1792793191542987281	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-update	9c8ca540238f6836
+2332	2489	1792793191542987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-update	9c8ca540238f6836
+2489	2621	1792793191822987281	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-patch	5766be42086e44a0
+2489	2621	1792793191822987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-patch	5766be42086e44a0
+2621	2759	1792793191962987281	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-configure	6ca2c63abed1f7a3
+2621	2759	1792793191962987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-configure	6ca2c63abed1f7a3
+2759	2917	1792793192122987281	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-build	f33f9c376d881688
+2759	2917	1792793192122987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-build	f33f9c376d881688
+2918	3050	1792793192252987281	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-install	68a15f4bf290bea7
+2918	3050	1792793192252987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-install	68a15f4bf290bea7
+3050	3188	1792793192392987281	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-test	da77c8d55b04b189
+3050	3188	1792793192392987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-test	da77c8d55b04b189
+3188	3383	1792793192582987281	CMakeFiles/nontype_functional-populate-complete	d35bb6442bd91c50
+3188	3383	1792793192582987281	nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-done	d35bb6442bd91c50
+3188	3383	1792793192582987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/CMakeFiles/nontype_functional-populate-complete	d35bb6442bd91c50
+3188	3383	1792793192582987281	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/nontype_functional-subbuild/nontype_functional-populate-prefix/src/nontype_functional-populate-stamp/nontype_functional-populate-done	d35bb6442bd91c50

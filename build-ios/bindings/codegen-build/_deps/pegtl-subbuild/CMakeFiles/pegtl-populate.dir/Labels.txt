@@ -1,0 +1,14 @@
+# Target labels
+ pegtl-populate
+# Source files and their labels
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/CMakeFiles/pegtl-populate
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/CMakeFiles/pegtl-populate.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/CMakeFiles/pegtl-populate-complete.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-build.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-configure.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-download.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-install.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-mkdir.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-patch.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-test.rule
+/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-update.rule

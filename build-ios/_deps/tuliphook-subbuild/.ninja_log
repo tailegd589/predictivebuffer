@@ -1,0 +1,21 @@
+# ninja log v7
+3	140	1792793220332987270	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-mkdir	979e18674d2f1d1a
+3	140	1792793220332987270	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-mkdir	979e18674d2f1d1a
+141	10211	1792793230412987266	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-download	5b620eaedc74b604
+141	10211	1792793230412987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-download	5b620eaedc74b604
+10212	10381	1792793230422987266	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-update	186748cfb12e1bae
+10212	10381	1792793230422987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-update	186748cfb12e1bae
+10382	10502	1792793230702987266	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-patch	81a19fba53a9e524
+10382	10502	1792793230702987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-patch	81a19fba53a9e524
+10503	10641	1792793230842987266	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-configure	80b566f1d1b3bbf
+10503	10641	1792793230842987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-configure	80b566f1d1b3bbf
+10641	10766	1792793230962987266	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-build	c7bb3c73d24069f5
+10641	10766	1792793230962987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-build	c7bb3c73d24069f5
+10766	10913	1792793231112987266	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-install	b4937a64aafd7528
+10766	10913	1792793231112987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-install	b4937a64aafd7528
+10913	11045	1792793231242987266	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-test	c188015d9f4c079
+10913	11045	1792793231242987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-test	c188015d9f4c079
+11045	11276	1792793231472987266	CMakeFiles/tuliphook-populate-complete	e08f8c7ce502a997
+11045	11276	1792793231472987266	tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-done	e08f8c7ce502a997
+11045	11276	1792793231472987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/CMakeFiles/tuliphook-populate-complete	e08f8c7ce502a997
+11045	11276	1792793231472987266	/data/data/com.termux/files/home/predictivebuffer/build/build-ios/_deps/tuliphook-subbuild/tuliphook-populate-prefix/src/tuliphook-populate-stamp/tuliphook-populate-done	e08f8c7ce502a997

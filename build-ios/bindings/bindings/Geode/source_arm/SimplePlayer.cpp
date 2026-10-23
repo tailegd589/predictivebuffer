@@ -1,0 +1,150 @@
+
+#include <stdexcept>
+#include <Geode/utils/addresser.hpp>
+#include <Geode/modify/Traits.hpp>
+#include <Geode/loader/Tulip.hpp>
+#include <Geode/binding/SimplePlayer.hpp>
+#include <Geode/cocos/platform/mac/CCFileUtilsMac.h>
+
+using namespace geode;
+using namespace geode::modifier;
+
+#if !defined(GEODE_WRAP_FUNCTION)
+#define GEODE_WRAP_FUNCTION
+template <class F>
+static auto wrapFunction(uintptr_t address, tulip::hook::TulipConvention convention) {
+	auto wrapped = geode::hook::createWrapper(reinterpret_cast<void*>(address), tulip::hook::WrapperMetadata{
+		.m_convention = geode::hook::createConvention(convention),
+		.m_abstract = tulip::hook::AbstractFunction::from(F(nullptr)),
+	});
+	if (wrapped.isErr()) {
+		throw std::runtime_error(wrapped.unwrapErr());
+	}
+	return wrapped.unwrap();
+}
+#endif
+
+SimplePlayer::~SimplePlayer() {
+	// basically we destruct it once by calling the gd function,
+	// then lock it, so that other gd destructors dont get called
+	if (!geode::DestructorLock::isLocked(this)) {
+		using FunctionType = void(*)(SimplePlayer*);
+		static auto func = wrapFunction<FunctionType>(base::get() + 0x2f9c80, tulip::hook::TulipConvention::Default);
+		reinterpret_cast<FunctionType>(func)(this);
+
+		// we need to construct it back so that it uhhh ummm doesnt crash
+		// while going to the child destructors
+		auto thing = new (this) SimplePlayer(geode::CutoffConstructor, sizeof(SimplePlayer));
+		geode::DestructorLock::addLock(this);
+	}
+}
+
+auto SimplePlayer::create(int id) -> decltype(create(id)) {
+	using FunctionType = decltype(create(id))(*)(int);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f4d84, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(id);
+}
+
+auto SimplePlayer::setOpacity(unsigned char opacity) -> decltype(setOpacity(opacity)) {
+	auto self = addresser::thunkAdjust(Resolve<unsigned char>::func(&SimplePlayer::setOpacity), this);
+	using FunctionType = decltype(setOpacity(opacity))(*)(SimplePlayer*, unsigned char);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa990, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(self, opacity);
+}
+
+auto SimplePlayer::setColor(cocos2d::ccColor3B const& color) -> decltype(setColor(color)) {
+	auto self = addresser::thunkAdjust(Resolve<cocos2d::ccColor3B const&>::func(&SimplePlayer::setColor), this);
+	using FunctionType = decltype(setColor(color))(*)(SimplePlayer*, cocos2d::ccColor3B const&);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa5cc, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(self, color);
+}
+
+auto SimplePlayer::asyncLoadIcon(int id, IconType type) -> decltype(asyncLoadIcon(id, type)) {
+	using FunctionType = decltype(asyncLoadIcon(id, type))(*)(SimplePlayer*, int, IconType);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa3a0, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, id, type);
+}
+
+auto SimplePlayer::createRobotSprite(int frame) -> decltype(createRobotSprite(frame)) {
+	using FunctionType = decltype(createRobotSprite(frame))(*)(SimplePlayer*, int);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f4e40, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, frame);
+}
+
+auto SimplePlayer::createSpiderSprite(int frame) -> decltype(createSpiderSprite(frame)) {
+	using FunctionType = decltype(createSpiderSprite(frame))(*)(SimplePlayer*, int);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f4e98, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, frame);
+}
+
+auto SimplePlayer::disableCustomGlowColor() -> decltype(disableCustomGlowColor()) {
+	using FunctionType = decltype(disableCustomGlowColor())(*)(SimplePlayer*);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f8cb8, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this);
+}
+
+auto SimplePlayer::enableCustomGlowColor(cocos2d::ccColor3B const& color) -> decltype(enableCustomGlowColor(color)) {
+	using FunctionType = decltype(enableCustomGlowColor(color))(*)(SimplePlayer*, cocos2d::ccColor3B const&);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f8c98, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, color);
+}
+
+auto SimplePlayer::hideAll() -> decltype(hideAll()) {
+	using FunctionType = decltype(hideAll())(*)(SimplePlayer*);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa4b8, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this);
+}
+
+auto SimplePlayer::hideSecondary() -> decltype(hideSecondary()) {
+	using FunctionType = decltype(hideSecondary())(*)(SimplePlayer*);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa6b8, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this);
+}
+
+auto SimplePlayer::iconFinishedLoading(int id, IconType type) -> decltype(iconFinishedLoading(id, type)) {
+	using FunctionType = decltype(iconFinishedLoading(id, type))(*)(SimplePlayer*, int, IconType);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa57c, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, id, type);
+}
+
+auto SimplePlayer::init(int id) -> decltype(init(id)) {
+	using FunctionType = decltype(init(id))(*)(SimplePlayer*, int);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f9db0, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, id);
+}
+
+auto SimplePlayer::setColors(cocos2d::ccColor3B const& color1, cocos2d::ccColor3B const& color2) -> decltype(setColors(color1, color2)) {
+	using FunctionType = decltype(setColors(color1, color2))(*)(SimplePlayer*, cocos2d::ccColor3B const&, cocos2d::ccColor3B const&);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f8c50, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, color1, color2);
+}
+
+auto SimplePlayer::setFrames(char const* firstFrame, char const* secondFrame, char const* ufoFrame, char const* glowFrame, char const* extraFrame) -> decltype(setFrames(firstFrame, secondFrame, ufoFrame, glowFrame, extraFrame)) {
+	using FunctionType = decltype(setFrames(firstFrame, secondFrame, ufoFrame, glowFrame, extraFrame))(*)(SimplePlayer*, char const*, char const*, char const*, char const*, char const*);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa76c, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, firstFrame, secondFrame, ufoFrame, glowFrame, extraFrame);
+}
+
+auto SimplePlayer::setSecondColor(cocos2d::ccColor3B const& color) -> decltype(setSecondColor(color)) {
+	using FunctionType = decltype(setSecondColor(color))(*)(SimplePlayer*, cocos2d::ccColor3B const&);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa62c, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, color);
+}
+
+auto SimplePlayer::tryEnableCustomGlowColor(int id) -> decltype(tryEnableCustomGlowColor(id)) {
+	using FunctionType = decltype(tryEnableCustomGlowColor(id))(*)(SimplePlayer*, int);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2fa65c, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, id);
+}
+
+auto SimplePlayer::updateColors() -> decltype(updateColors()) {
+	using FunctionType = decltype(updateColors())(*)(SimplePlayer*);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f877c, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this);
+}
+
+auto SimplePlayer::updatePlayerFrame(int id, IconType type) -> decltype(updatePlayerFrame(id, type)) {
+	using FunctionType = decltype(updatePlayerFrame(id, type))(*)(SimplePlayer*, int, IconType);
+	static auto func = wrapFunction<FunctionType>(base::get() + 0x2f5050, tulip::hook::TulipConvention::Default);
+	return reinterpret_cast<FunctionType>(func)(this, id, type);
+}
