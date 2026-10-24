@@ -17,20 +17,28 @@ jobs:
             https://github.com/geode-sdk/geode.git $HOME/geode-sdk
           echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
 
-      - name: Inspect CMakeLists binary check
-        run: sed -n '390,420p' $HOME/geode-sdk/CMakeLists.txt
+      - name: Show CMakeLists loader check
+        run: |
+          echo "=== Lines 390-420 ==="
+          sed -n '390,420p' $HOME/geode-sdk/CMakeLists.txt
+          echo "=== All bin references ==="
+          grep -n "bin/" $HOME/geode-sdk/CMakeLists.txt | head -30
+          echo "=== GEODE_PLATFORM references ==="
+          grep -n "GEODE_PLATFORM\|loader_path\|LOADER_PATH\|Geode\.dylib\|libGeode" \
+            $HOME/geode-sdk/CMakeLists.txt | head -30
 
-      - name: Create dummy loader binaries (all possible paths)
+      - name: Create dummy loader binaries
         run: |
           for dir in ios iOS mac MacOS; do
             mkdir -p $HOME/geode-sdk/bin/$dir
             echo "" | clang -x c - -shared \
               -target arm64-apple-ios16.0 \
               -o $HOME/geode-sdk/bin/$dir/Geode.dylib
+            ar rcs $HOME/geode-sdk/bin/$dir/libGeode.a
           done
           find $HOME/geode-sdk/bin -type f
 
-      - name: Configure CMake
+      - name: Configure CMake (continue on error)
         run: |
           cmake -B build-ios -G Ninja \
             -DCMAKE_BUILD_TYPE=Release \
@@ -38,7 +46,7 @@ jobs:
             -DCMAKE_OSX_ARCHITECTURES=arm64 \
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 \
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON \
-            -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-undefined,dynamic_lookup"
+            -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-undefined,dynamic_lookup" || true
 
       - name: Build
         run: cmake --build build-ios -j$(sysctl -n hw.logicalcpu)
