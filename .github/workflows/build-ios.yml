@@ -23,10 +23,10 @@ jobs:
       - name: Patch Geode SDK
         run: |
           sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
-          echo "Patch 403 done"
 
       - name: Configure CMake
         run: |
+          STUB="${{ github.workspace }}/fmod_stub.h"
           FMOD="$HOME/geode-sdk/loader/include/Geode/fmod"
           cmake -B build-ios -G Ninja \
             -DCMAKE_BUILD_TYPE=Release \
@@ -35,7 +35,7 @@ jobs:
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 \
             -DCMAKE_CXX_STANDARD=23 \
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON \
-            -DCMAKE_CXX_FLAGS="-isystem $FMOD" \
+            "-DCMAKE_CXX_FLAGS=-isystem $FMOD -include $STUB" \
             -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-undefined,dynamic_lookup"
 
       - name: Build
