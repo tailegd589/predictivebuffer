@@ -18,13 +18,11 @@ jobs:
 
       - name: Setup Geode SDK
         run: |
-          geode sdk install --path $HOME/geode-sdk
+          geode sdk install $HOME/geode-sdk
           echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
 
       - name: Install iOS binaries
-        run: |
-          geode sdk install-binaries --platform ios
-          ls $HOME/geode-sdk/bin/
+        run: geode sdk install-binaries --platform ios
 
       - name: Configure CMake
         run: |
