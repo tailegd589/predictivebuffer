@@ -26,7 +26,6 @@ jobs:
 
       - name: Configure CMake
         run: |
-          STUB="${{ github.workspace }}/fmod_stub.h"
           FMOD="$HOME/geode-sdk/loader/include/Geode/fmod"
           cmake -B build-ios -G Ninja \
             -DCMAKE_BUILD_TYPE=Release \
@@ -35,8 +34,23 @@ jobs:
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 \
             -DCMAKE_CXX_STANDARD=23 \
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON \
-            "-DCMAKE_CXX_FLAGS=-isystem $FMOD -include $STUB" \
+            "-DCMAKE_CXX_FLAGS=-isystem $FMOD" \
             -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-undefined,dynamic_lookup"
+
+      - name: Patch GeneratedSource.cpp
+        run: |
+          # Tìm tất cả GeneratedSource*.cpp và thêm fmod include ở đầu
+          find build-ios/bindings -name "GeneratedSource*.cpp" | while read f; do
+            echo "Patching $f"
+            echo '#include <fmod.hpp>' | cat - "$f" > /tmp/_gen.cpp && mv /tmp/_gen.cpp "$f"
+          done
+          # Patch unity files chứa GeneratedSource
+          find build-ios/bindings -name "unity_*.cxx" | while read f; do
+            if grep -q "GeneratedSource" "$f" 2>/dev/null; then
+              echo "Patching unity $f"
+              echo '#include <fmod.hpp>' | cat - "$f" > /tmp/_unity.cpp && mv /tmp/_unity.cpp "$f"
+            fi
+          done
 
       - name: Build
         run: cmake --build build-ios -j$(sysctl -n hw.logicalcpu)
