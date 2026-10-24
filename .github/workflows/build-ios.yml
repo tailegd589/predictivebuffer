@@ -20,7 +20,6 @@ jobs:
       - name: Create dummy loader binary
         run: |
           mkdir -p $HOME/geode-sdk/bin/ios
-          # Tạo stub .dylib rỗng để qua check của CMake
           echo "" | clang -x c - -shared \
             -target arm64-apple-ios16.0 \
             -o $HOME/geode-sdk/bin/ios/Geode.dylib
