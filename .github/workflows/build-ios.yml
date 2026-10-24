@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-ios:
-    runs-on: macos-14
+    runs-on: macos-15   # Xcode 16 / AppleClang 16 — hỗ trợ C++23 đầy đủ
 
     steps:
       - uses: actions/checkout@v4
@@ -22,9 +22,8 @@ jobs:
             https://github.com/geode-sdk/geode.git $HOME/geode-sdk
           echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
 
-      - name: Patch CMakeLists - loader binary warning only
-        run: |
-          sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
+      - name: Patch CMakeLists loader binary check
+        run: sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
 
       - name: Configure CMake
         run: |
