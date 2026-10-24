@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-ios:
-    runs-on: macos-15   # Xcode 16 / AppleClang 16 — hỗ trợ C++23 đầy đủ
+    runs-on: macos-15
 
     steps:
       - uses: actions/checkout@v4
@@ -22,8 +22,27 @@ jobs:
             https://github.com/geode-sdk/geode.git $HOME/geode-sdk
           echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
 
-      - name: Patch CMakeLists loader binary check
-        run: sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
+      - name: Patch Geode SDK
+        run: |
+          # 1. Loader binary check → WARNING
+          sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
+          # 2. Thêm FMOD include vào GeodeBindings để fix FunctionType/FMOD_RESULT
+          FMOD_DIR="$HOME/geode-sdk/loader/include/Geode/fmod"
+          python3 - <<PYEOF
+import re, pathlib
+p = pathlib.Path("$HOME/geode-sdk/CMakeLists.txt")
+txt = p.read_text()
+# Thêm include_directories sau setup_geode_mod target để GeodeBindings thấy FMOD
+patch = '\ntarget_include_directories(GeodeBindings PUBLIC "$FMOD_DIR")\n'
+# Chèn sau dòng "add_library(GeodeBindings"
+txt2 = re.sub(r'(add_library\s*\(\s*GeodeBindings[^\)]*\))',
+              r'\1' + patch, txt, count=1)
+if txt2 == txt:
+    # fallback: append at end
+    txt2 = txt + patch
+p.write_text(txt2)
+print("Patch applied")
+PYEOF
 
       - name: Configure CMake
         run: |
@@ -34,6 +53,7 @@ jobs:
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 \
             -DCMAKE_CXX_STANDARD=23 \
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON \
+            "-DCMAKE_CXX_FLAGS=-isystem $HOME/geode-sdk/loader/include/Geode/fmod" \
             -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-undefined,dynamic_lookup"
 
       - name: Build
