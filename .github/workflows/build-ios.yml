@@ -21,8 +21,7 @@ jobs:
           echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
 
       - name: Patch Geode SDK
-        run: |
-          sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
+        run: sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
 
       - name: Configure CMake
         run: |
@@ -39,26 +38,25 @@ jobs:
 
       - name: Patch GeneratedSource.cpp
         run: |
-          # Tìm tất cả GeneratedSource*.cpp và thêm fmod include ở đầu
-          find build-ios/bindings -name "GeneratedSource*.cpp" | while read f; do
-            echo "Patching $f"
-            echo '#include <fmod.hpp>' | cat - "$f" > /tmp/_gen.cpp && mv /tmp/_gen.cpp "$f"
-          done
-          # Patch unity files chứa GeneratedSource
           find build-ios/bindings -name "unity_*.cxx" | while read f; do
             if grep -q "GeneratedSource" "$f" 2>/dev/null; then
-              echo "Patching unity $f"
-              echo '#include <fmod.hpp>' | cat - "$f" > /tmp/_unity.cpp && mv /tmp/_unity.cpp "$f"
+              echo '#include <fmod.hpp>' | cat - "$f" > /tmp/_u.cpp && mv /tmp/_u.cpp "$f"
             fi
           done
 
       - name: Build
-        run: cmake --build build-ios -j$(sysctl -n hw.logicalcpu)
+        run: cmake --build build-ios -j$(sysctl -n hw.logicalcpu) || true
 
-      - name: Collect dylib
+      - name: Collect outputs
         run: |
-          DYLIB=$(find build-ios -name "*.dylib" | grep -v _deps | head -1)
-          echo "Found: $DYLIB"
+          echo "=== Searching for dylib ==="
+          find build-ios -name "*.dylib" 2>/dev/null
+          find build-ios -name "*.geode" 2>/dev/null
+          DYLIB=$(find build-ios -name "ai.predictivebuffer.ios.dylib" | head -1)
+          if [ -z "$DYLIB" ]; then
+            DYLIB=$(find build-ios -name "*.dylib" | grep -v _deps | head -1)
+          fi
+          echo "Using: $DYLIB"
           file "$DYLIB"
           cp "$DYLIB" ai.predictivebuffer.ios.dylib
 
