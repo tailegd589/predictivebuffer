@@ -25,7 +25,6 @@ jobs:
       - name: Patch CMakeLists - loader binary warning only
         run: |
           sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
-          grep -n "FATAL_ERROR\|WARNING.*loader" $HOME/geode-sdk/CMakeLists.txt | head -5
 
       - name: Configure CMake
         run: |
@@ -34,6 +33,7 @@ jobs:
             -DCMAKE_SYSTEM_NAME=iOS \
             -DCMAKE_OSX_ARCHITECTURES=arm64 \
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 \
+            -DCMAKE_CXX_STANDARD=23 \
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON \
             -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-undefined,dynamic_lookup"
 
