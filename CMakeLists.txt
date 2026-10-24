@@ -27,12 +27,6 @@ setup_geode_mod(${PROJECT_NAME})
 
 # ── iOS-specific flags ────────────────────────────────────────────────────────
 if (${CMAKE_SYSTEM_NAME} STREQUAL "iOS")
-    # Link against the frameworks GD uses
-    target_link_libraries(${PROJECT_NAME} PRIVATE
-        "-framework Foundation"
-        "-framework UIKit"
-        "-framework CoreGraphics"
-    )
     # Minimum deployment target — GD on iOS requires 16.0
     set_target_properties(${PROJECT_NAME} PROPERTIES
         XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET "16.0"
