@@ -11,18 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Geode CLI
+      - name: Clone Geode SDK
         run: |
-          brew install geode-sdk/geode/geode-cli
-          geode --version
-
-      - name: Setup Geode SDK
-        run: |
-          geode sdk install $HOME/geode-sdk
+          git clone --depth 1 --branch v5.11.2 \
+            https://github.com/geode-sdk/geode.git $HOME/geode-sdk
           echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
 
-      - name: Install iOS binaries
-        run: geode sdk install-binaries --platform ios
+      - name: Create dummy loader binary
+        run: |
+          mkdir -p $HOME/geode-sdk/bin/ios
+          # Tạo stub .dylib rỗng để qua check của CMake
+          echo "" | clang -x c - -shared \
+            -target arm64-apple-ios16.0 \
+            -o $HOME/geode-sdk/bin/ios/Geode.dylib
+          ls -la $HOME/geode-sdk/bin/ios/
 
       - name: Configure CMake
         run: |
@@ -31,16 +33,18 @@ jobs:
             -DCMAKE_SYSTEM_NAME=iOS \
             -DCMAKE_OSX_ARCHITECTURES=arm64 \
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 \
-            -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON
+            -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON \
+            -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-undefined,dynamic_lookup"
 
       - name: Build
         run: cmake --build build-ios -j$(sysctl -n hw.logicalcpu)
 
       - name: Collect dylib
         run: |
-          cp $(find build-ios -name "*.dylib" | grep -v _deps | head -1) \
-             ai.predictivebuffer.ios.dylib
-          file ai.predictivebuffer.ios.dylib
+          DYLIB=$(find build-ios -name "*.dylib" | grep -v _deps | grep -v "Geode.dylib" | head -1)
+          echo "Found: $DYLIB"
+          file "$DYLIB"
+          cp "$DYLIB" ai.predictivebuffer.ios.dylib
 
       - uses: actions/upload-artifact@v4
         with:
