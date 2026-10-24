@@ -17,13 +17,18 @@ jobs:
             https://github.com/geode-sdk/geode.git $HOME/geode-sdk
           echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
 
-      - name: Create dummy loader binary
+      - name: Inspect CMakeLists binary check
+        run: sed -n '390,420p' $HOME/geode-sdk/CMakeLists.txt
+
+      - name: Create dummy loader binaries (all possible paths)
         run: |
-          mkdir -p $HOME/geode-sdk/bin/ios
-          echo "" | clang -x c - -shared \
-            -target arm64-apple-ios16.0 \
-            -o $HOME/geode-sdk/bin/ios/Geode.dylib
-          ls -la $HOME/geode-sdk/bin/ios/
+          for dir in ios iOS mac MacOS; do
+            mkdir -p $HOME/geode-sdk/bin/$dir
+            echo "" | clang -x c - -shared \
+              -target arm64-apple-ios16.0 \
+              -o $HOME/geode-sdk/bin/$dir/Geode.dylib
+          done
+          find $HOME/geode-sdk/bin -type f
 
       - name: Configure CMake
         run: |
@@ -41,9 +46,8 @@ jobs:
       - name: Collect dylib
         run: |
           DYLIB=$(find build-ios -name "*.dylib" | grep -v _deps | grep -v "Geode.dylib" | head -1)
-          echo "Found: $DYLIB"
-          file "$DYLIB"
           cp "$DYLIB" ai.predictivebuffer.ios.dylib
+          file ai.predictivebuffer.ios.dylib
 
       - uses: actions/upload-artifact@v4
         with:
