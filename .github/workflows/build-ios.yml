@@ -12,9 +12,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install Geode CLI
-        run: |
-          brew install geode-sdk/geode/geode-cli
-          geode --version
+        run: brew install geode-sdk/geode/geode-cli && geode --version
 
       - name: Clone Geode SDK
         run: |
@@ -24,28 +22,12 @@ jobs:
 
       - name: Patch Geode SDK
         run: |
-          # 1. Loader binary check → WARNING
           sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
-          # 2. Thêm FMOD include vào GeodeBindings để fix FunctionType/FMOD_RESULT
-          FMOD_DIR="$HOME/geode-sdk/loader/include/Geode/fmod"
-          python3 - <<PYEOF
-import re, pathlib
-p = pathlib.Path("$HOME/geode-sdk/CMakeLists.txt")
-txt = p.read_text()
-# Thêm include_directories sau setup_geode_mod target để GeodeBindings thấy FMOD
-patch = '\ntarget_include_directories(GeodeBindings PUBLIC "$FMOD_DIR")\n'
-# Chèn sau dòng "add_library(GeodeBindings"
-txt2 = re.sub(r'(add_library\s*\(\s*GeodeBindings[^\)]*\))',
-              r'\1' + patch, txt, count=1)
-if txt2 == txt:
-    # fallback: append at end
-    txt2 = txt + patch
-p.write_text(txt2)
-print("Patch applied")
-PYEOF
+          echo "Patch 403 done"
 
       - name: Configure CMake
         run: |
+          FMOD="$HOME/geode-sdk/loader/include/Geode/fmod"
           cmake -B build-ios -G Ninja \
             -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_SYSTEM_NAME=iOS \
@@ -53,7 +35,7 @@ PYEOF
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 \
             -DCMAKE_CXX_STANDARD=23 \
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=ON \
-            "-DCMAKE_CXX_FLAGS=-isystem $HOME/geode-sdk/loader/include/Geode/fmod" \
+            -DCMAKE_CXX_FLAGS="-isystem $FMOD" \
             -DCMAKE_SHARED_LINKER_FLAGS="-Wl,-undefined,dynamic_lookup"
 
       - name: Build
