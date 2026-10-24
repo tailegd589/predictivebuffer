@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/data/data/com.termux/files/home/predictivebuffer/build/build-ios/bindings/codegen-build/_deps/result-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
