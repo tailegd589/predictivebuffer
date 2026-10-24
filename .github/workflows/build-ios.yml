@@ -11,20 +11,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install Geode CLI
+        run: |
+          brew install geode-sdk/geode/geode-cli
+          geode --version
+
       - name: Clone Geode SDK
         run: |
           git clone --depth 1 --branch v5.11.2 \
             https://github.com/geode-sdk/geode.git $HOME/geode-sdk
           echo "GEODE_SDK=$HOME/geode-sdk" >> $GITHUB_ENV
 
-      - name: Patch CMakeLists line 403
+      - name: Patch CMakeLists - loader binary warning only
         run: |
-          echo "=== Before patch (lines 398-408) ==="
-          sed -n '398,408p' $HOME/geode-sdk/CMakeLists.txt
-          # Thay FATAL_ERROR → WARNING trực tiếp tại line 403
           sed -i '' '403s/FATAL_ERROR/WARNING/' $HOME/geode-sdk/CMakeLists.txt
-          echo "=== After patch ==="
-          sed -n '398,408p' $HOME/geode-sdk/CMakeLists.txt
+          grep -n "FATAL_ERROR\|WARNING.*loader" $HOME/geode-sdk/CMakeLists.txt | head -5
 
       - name: Configure CMake
         run: |
