@@ -44,8 +44,6 @@ struct BufferState {
 static std::unordered_map<uintptr_t, BufferState> g_states;
 static int  g_tick        = 0;
 static bool g_inLevel     = false;
-// FIX: prevent dispatch loop — when we fire a queued input,
-// handleButton must pass it straight to the original
 static bool g_dispatching = false;
 
 static BufferState& bst(PlayerObject* p) {
@@ -55,12 +53,15 @@ static void clear_states() { g_states.clear(); }
 
 struct BufBaseGameLayer : geode::Modify<BufBaseGameLayer, GJBaseGameLayer> {
     void handleButton(bool push, int btn, bool isP1) {
-        // Always pass through when dispatching from queue
         if (g_dispatching || !g_inLevel || !g_cfg.enabled) {
             GJBaseGameLayer::handleButton(push, btn, isP1);
             return;
         }
-        auto* p = isP1 ? m_player1 : m_player2;
+
+        // FIX: in single-player, right side sends isP1=false but m_player2 is null
+        // → treat as player1 so both halves of screen work
+        PlayerObject* p = isP1 ? m_player1 : m_player2;
+        if (!p) p = m_player1;   // fallback to player1
         if (!p) { GJBaseGameLayer::handleButton(push, btn, isP1); return; }
 
         auto& s  = bst(p);
@@ -89,10 +90,9 @@ struct BufPlayerObject : geode::Modify<BufPlayerObject, PlayerObject> {
             for (auto& ev : s.queue) {
                 if (g_tick >= ev.fireTick) {
                     if (auto* gl = m_gameLayer) {
-                        log::debug("[InputBuffer] FIRE +{} ticks {}",
+                        log::debug("[InputBuffer] FIRE +{} {}",
                                    ev.fireTick - ev.frame0,
                                    ev.kind == EventKind::Press ? "PRESS" : "RELEASE");
-                        // Set flag so handleButton passes straight through
                         g_dispatching = true;
                         gl->handleButton(ev.kind == EventKind::Press,
                                          (int)ev.button, ev.isPlayer1);
@@ -105,8 +105,8 @@ struct BufPlayerObject : geode::Modify<BufPlayerObject, PlayerObject> {
             s.queue = std::move(rem);
         }
         PlayerObject::update(dt);
-        // Only increment tick for player1 to avoid double-tick in dual mode
-        if (this == (m_gameLayer ? m_gameLayer->m_player1 : nullptr)) {
+        // Tick only on player1 to avoid double-increment in dual mode
+        if (m_gameLayer && this == m_gameLayer->m_player1) {
             g_tick++;
         }
     }
@@ -122,8 +122,7 @@ struct BufPlayLayer : geode::Modify<BufPlayLayer, PlayLayer> {
     }
     void onQuit() {
         g_inLevel = false; g_dispatching = false;
-        clear_states();
-        PlayLayer::onQuit();
+        clear_states(); PlayLayer::onQuit();
     }
     void destroyPlayer(PlayerObject* p, GameObject* o) {
         if (p) bst(p).queue.clear();
